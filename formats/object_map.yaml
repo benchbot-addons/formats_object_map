@@ -1,0 +1,24 @@
+name: object_map
+description: |
+  The "object map" is a map of the objects in an environment. Each object is
+  represented by a probability distribution describing the suggested object
+  label, and the bounding box's 3D centroid and extent. An "object map" also
+  requires a "class_list", which is used to create object label probability
+  distributions.
+generate_functions:
+  source: "./object_map.py"
+  functions: [empty_object]
+format:
+  objects:
+    - label_probs:
+        class: "list"
+        condition: "all_type(obj, str)"
+      centroid:
+        class: "list"
+        condition: "len(obj) == 3 and all_numeric(obj)"
+      extent:
+        class: "list"
+        condition: "len(obj) == 3 and all_numeric(obj)"
+  class_list:
+    class: "list"
+    condition: "all_type(obj, str)"
