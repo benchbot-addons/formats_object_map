@@ -5,20 +5,6 @@ description: |
   label, and the bounding box's 3D centroid and extent. An "object map" also
   requires a "class_list", which is used to create object label probability
   distributions.
-generate_functions:
-  source: "./object_map.py"
-  functions: [empty_object]
-format:
-  objects:
-    - label_probs:
-        class: "list"
-        condition: "all_type(obj, str)"
-      centroid:
-        class: "list"
-        condition: "len(obj) == 3 and all_numeric(obj)"
-      extent:
-        class: "list"
-        condition: "len(obj) == 3 and all_numeric(obj)"
-  class_list:
-    class: "list"
-    condition: "all_type(obj, str)"
+functions:
+  create: ".object_map.create_empty"
+  create_object: ".object_map.create_empty_object"

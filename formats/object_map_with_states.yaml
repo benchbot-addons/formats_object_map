@@ -1,0 +1,8 @@
+name: object_map_with_states
+description: |
+  The same as an "object map", but each object also has field specifying a
+  probability distribution for the object's state. Valid states are defined by 
+  the top level 'state_list' field.
+functions:
+  create: ".object_map_states.create_empty"
+  create_object: ".object_map_states.create_empty_object"

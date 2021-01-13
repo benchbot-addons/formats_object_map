@@ -1,0 +1,11 @@
+name: object_map_ground_truth
+description: |
+  A ground truth "object map" servers is similar to the standard "object map" 
+  map, but is meant for use when specifying ground truth maps. The objects in 
+  the map:
+    - have a class label rather than probability distribution),  
+    - have a field for denoting an object's unique ID, and
+    - can denote if the object is a group
+functions:
+  create: ".object_map_ground_truth.create_empty"
+  create_object: ".object_map_ground_truth.create_empty_object"
