@@ -4,5 +4,5 @@ description: |
   probability distribution for the object's state. Valid states are defined by 
   the top level 'state_list' field.
 functions:
-  create: ".object_map_states.create_empty"
-  create_object: ".object_map_states.create_empty_object"
+  create: "object_map_states.create_empty"
+  create_object: "object_map_states.create_empty_object"

@@ -6,5 +6,5 @@ description: |
   requires a "class_list", which is used to create object label probability
   distributions.
 functions:
-  create: ".object_map.create_empty"
-  create_object: ".object_map.create_empty_object"
+  create: "object_map.create_empty"
+  create_object: "object_map.create_empty_object"
