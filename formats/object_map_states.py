@@ -1,4 +1,4 @@
-from . import object_map as om
+import object_map as om
 
 DEFAULT_STATES = ['added', 'removed', 'unchanged']
 
@@ -25,6 +25,8 @@ def validate(result):
             "The 'state_probs' field in object '%d' isn't a list of numbers "
             "with the same length as 'state_list' (%d))" %
             (i, len(result['state_probs'])), len(result['state_probs']))
-    assert ('state_probs' in result and type(result['state_probs'] == list)
-            and all(type(x) == str for x in result['state_probs'])), \
-            "Object maps with states must contain a state_list (list of strings)"
+    assert ('state_list' in result and type(result['state_list']) == list
+            and result['state_list']
+            and all(type(x) == str for x in result['state_list'])), (
+                "Object maps with states must contain a state_list "
+                "(non-empty list of strings)")

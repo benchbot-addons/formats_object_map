@@ -6,3 +6,4 @@ description: |
 functions:
   create: "object_map_states.create_empty"
   create_object: "object_map_states.create_empty_object"
+  validate: "object_map_states.validate"
