@@ -32,8 +32,8 @@ def _validate_numbers_list(value, msg, required_length=None):
 
 
 def validate(result):
-    assert 'objects' in result and type(result['objects'] == list), \
-            "Object maps must contain a list of objects"
+    assert ('objects' in result and type(result['objects'] == list)
+            ), "Object maps must contain a list of objects"
     for o, i in enumerate(result['objects']):
         _validate_numbers_list(
             o['label_probs'],
@@ -48,6 +48,8 @@ def validate(result):
             o['extent'],
             "The 'centroid' field in object '%d' isn't a list of numbers "
             "with a length of 3" % (i, 3), 3)
-    assert ('class_list' in result and type(result['class_list']) == list
-            and all(type(x) == str for x in result['class_list'])), \
-            "Object maps must contain a class_list (list of strings)"
+    assert (
+        'class_list' in result and type(result['class_list']) == list
+        and result['class_list']
+        and all(type(x) == str for x in result['class_list'])
+    ), "Object maps must contain a class_list (non-empty list of strings)"
