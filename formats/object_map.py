@@ -34,7 +34,7 @@ def _validate_numbers_list(value, msg, required_length=None):
 def validate(result):
     assert ('objects' in result and type(result['objects'] == list)
             ), "Object maps must contain a list of objects"
-    for o, i in enumerate(result['objects']):
+    for i, o in enumerate(result['objects']):
         _validate_numbers_list(
             o['label_probs'],
             "The 'label_probs' field in object '%d' isn't a list of numbers "
@@ -43,11 +43,11 @@ def validate(result):
         _validate_numbers_list(
             o['centroid'],
             "The 'centroid' field in object '%d' isn't a list of numbers "
-            "with a length of 3" % (i, 3), 3)
+            "with a length of 3" % i, 3)
         _validate_numbers_list(
             o['extent'],
             "The 'centroid' field in object '%d' isn't a list of numbers "
-            "with a length of 3" % (i, 3), 3)
+            "with a length of 3" % i, 3)
     assert (
         'class_list' in result and type(result['class_list']) == list
         and result['class_list']

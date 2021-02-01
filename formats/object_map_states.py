@@ -19,7 +19,7 @@ def create_empty_object(num_classes=None, num_states=None):
 
 def validate(result):
     om.validate(result)
-    for o, i in enumerate(result['objects']):
+    for i, o in enumerate(result['objects']):
         om._validate_numbers_list(
             o['state_probs'],
             "The 'state_probs' field in object '%d' isn't a list of numbers "
