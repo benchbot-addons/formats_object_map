@@ -24,7 +24,7 @@ def validate(result):
             o['state_probs'],
             "The 'state_probs' field in object '%d' isn't a list of numbers "
             "with the same length as 'state_list' (%d))" %
-            (i, len(result['state_probs'])), len(result['state_probs']))
+            (i, len(o['state_probs'])))
     assert ('state_list' in result and type(result['state_list']) == list
             and result['state_list']
             and all(type(x) == str for x in result['state_list'])), (
