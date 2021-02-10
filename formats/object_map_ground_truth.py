@@ -1,5 +1,8 @@
 def create_empty():
-    return {'objects': []}
+    return {
+        'objects': [],
+        'synonyms': {}
+    }
 
 
 def create_empty_object():
